@@ -45,7 +45,13 @@ class ENAUITests_06_DeltaOnboarding: XCTestCase {
 		app.launchArguments.append(contentsOf: ["-onboardingVersion", "1.4"])
 		
 		app.launch()
-		
+
+		// a test!
+		let screenshot = XCUIScreen.main.screenshot()
+		let fullScreenshotAttachment = XCTAttachment(screenshot: screenshot)
+		fullScreenshotAttachment.lifetime = .keepAlways
+		add(fullScreenshotAttachment)
+
 		// The "Information zur Funktionsweise der Risiko-Ermittlung"
 		// appears on fresh installs (e.g. every CI-run) but not on already started apps.
 		// We dismiss it if present.
@@ -53,6 +59,12 @@ class ENAUITests_06_DeltaOnboarding: XCTestCase {
 		if alert.exists {
 			alert.buttons.firstMatch.tap()
 		}
+
+		// a 2nd test!
+		let screenshot2 = XCUIScreen.main.screenshot()
+		let fullScreenshotAttachment2 = XCTAttachment(screenshot: screenshot2)
+		fullScreenshotAttachment2.lifetime = .keepAlways
+		add(fullScreenshotAttachment)
 
 		let tablesQuery = XCUIApplication().tables
 		XCTAssertTrue(tablesQuery.images["AppStrings.DeltaOnboarding.accImageLabel"].waitForExistence(timeout: 5.0))
