@@ -82,6 +82,13 @@ jobs:
           shell: /bin/zsh
           command: |
             ./scripts/fix_swiftlint_output.sh src/xcode/swiftlint.result.json
+      - run:
+          name: Collect logs
+          shell: /bin/zsh
+          command: |
+            cd src/xcode/fastlane/test_output
+            tar -czf logs.tar logs
+            rm -rf logs/
       - store_test_results:
           path: src/xcode/fastlane/test_output
       - store_artifacts:

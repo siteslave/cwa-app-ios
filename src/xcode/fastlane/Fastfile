@@ -77,7 +77,7 @@ platform :ios do
       devices: ["iPhone 11"],
       prelaunch_simulator: true,
       include_simulator_logs: true,
-      output_directory: "fastlane/test_output"
+      output_directory: "fastlane/test_output/logs"
     )
 
     # Gather code coverage
