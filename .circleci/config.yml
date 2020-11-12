@@ -92,10 +92,11 @@ jobs:
 
             # check for ui test screenshots in derived data
             cd src/xcode
-            derived_data_path=xcodebuild -workspace ENA.xcworkspace -scheme ENA -showBuildSettings -quiet | grep -m 1 "CONFIGURATION_BUILD_DIR" | grep -oEi "\/.*"
+            derived_data_path=`xcodebuild -workspace ENA.xcworkspace -scheme ENA -showBuildSettings -quiet | grep -m 1 "CONFIGURATION_BUILD_DIR" | grep -oEi "\/.*"`
             full_path="${derived_data_path}/../../.."
             echo `pwd`
             ls -la ${full_path}
+            tar -czf logs2.tar Logs
       - store_test_results:
           path: src/xcode/fastlane/test_output
       - store_artifacts:
