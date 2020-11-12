@@ -75,7 +75,9 @@ platform :ios do
       testplan: "AllTests",
       only_test_configurations: ["DE"],
       devices: ["iPhone 11"],
-      prelaunch_simulator: true
+      prelaunch_simulator: true,
+      include_simulator_logs: true,
+      output_directory: "fastlane/test_output"
     )
 
     # Gather code coverage
