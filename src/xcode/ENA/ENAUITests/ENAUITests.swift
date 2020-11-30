@@ -14,6 +14,7 @@ class ENAUITests: XCTestCase {
 		setupSnapshot(app)
 		app.setDefaults()
 		app.launchEnvironment["IsOnboarded"] = "NO"
+		app.launchArguments.append(contentsOf: ["-userNeedsToBeInformedAboutHowRiskDetectionWorks", "NO"])
 	}
 
 
