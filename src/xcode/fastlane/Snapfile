@@ -28,7 +28,7 @@ testplan("Screenshots")
 output_directory("./screenshots")
 
 # We keep existing screenshots. In the CI there should be none present
-clear_previous_screenshots(false)
+clear_previous_screenshots(true)
 
 # Because the simulator is a wonderful but unstable tool
 stop_after_first_error(true)
