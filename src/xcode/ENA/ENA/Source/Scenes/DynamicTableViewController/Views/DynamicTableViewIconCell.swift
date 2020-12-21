@@ -30,7 +30,7 @@ class DynamicTableViewIconCell: UITableViewCell {
 			imageView?.image = image?.withRenderingMode(.alwaysTemplate)
 		} else {
 			imageView?.tintColor = tintColor
-			imageView?.image = image?.withRenderingMode(.alwaysOriginal)
+			imageView?.image = image?.withRenderingMode(.automatic)
 		}
 
 		imageViewWidthConstraint.constant = iconWidth
