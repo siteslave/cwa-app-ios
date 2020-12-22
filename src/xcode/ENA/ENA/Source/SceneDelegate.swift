@@ -124,7 +124,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		case ActionableNotificationIdentifier.testResult.identifier,
 			 ActionableNotificationIdentifier.riskDetection.identifier,
 			 ActionableNotificationIdentifier.deviceTimeCheck.identifier:
-			showHome(animated: true)
+			showHome()
 
 		case ActionableNotificationIdentifier.warnOthersReminder1.identifier,
 			 ActionableNotificationIdentifier.warnOthersReminder2.identifier:
@@ -208,7 +208,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .enaColor(for: .tint)
 	}
 
-	private func showHome(animated _: Bool = false) {
+	private func showHome() {
 		if exposureManager.exposureManagerState.status == .unknown {
 			exposureManager.activate { [weak self] error in
 				if let error = error {
